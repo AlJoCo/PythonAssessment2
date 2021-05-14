@@ -218,7 +218,9 @@ def seven(a, b, c):
 def eight(input,  a):
 	x = input[(len(input)//2)-(a//2):(len(input)//2)+((a//2)+1)]
 	if len(x) == 1:
-		y = input[(len(input)//2)]
+		temp = list(input)
+		temp[(len(input)//2)] = ""
+		y = "".join(temp)
 	else:
 		y = input.replace(x, "")
 	return y
