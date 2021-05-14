@@ -30,8 +30,12 @@
 	# How does a for loop iterate through a string?
 
 def one(input):
-	return ""
-
+	x = ""
+	for i in input:
+		if i == i[i-2]:
+			y = i+i
+	return y
+		
 	# <QUESTION 2>
 
     #  Write a function which returns the boolean True if the input is only divisible by one and itself.
@@ -48,7 +52,15 @@ def one(input):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(range).
 
 def two(input):
-    return False
+	x = []
+	if input <= 2:
+		return True
+	for i in range(input - 2):
+		if input % i == 0:
+			x.append(i)
+	if x.count >= 1:
+		return True
+	return False
 
 	# <QUESTION 3>
 
@@ -65,7 +77,15 @@ def two(input):
 	# What happens if you multiply a string by a number?
 
 def three(a):
-	return 1
+	#x = ""
+	#str(a) = x
+	#y = x+(x+x)+(x+x+x)+(x+x+x+x)
+	x = a
+	y = a*11
+	z = a*111
+	b = a*1111
+	answer = x+y+z+b
+	return answer
 
 	# <QUESTION 4>
 
@@ -94,7 +114,14 @@ def three(a):
 	# How would you seperate a string into characters?
 
 def four(input1, input2):
-	return ""
+	ans = []
+	x=0
+	for i in input1:
+		ans.append(i)
+		ans.append(input2[x])
+		x = x+1
+	f_ans = "".join(ans)
+	return f_ans
 
 	# <QUESTION 5>
 
@@ -111,7 +138,13 @@ def four(input1, input2):
 	# The random module contains a function called randint.
 
 def five():
-    return []
+	import random
+	ans = []
+	if len(ans) < 5:
+		x = random.randint(100,200)
+		if x % 2 == 0:
+			ans.append(x)
+	return ans
 
 	# <QUESTION 6>
 
@@ -130,7 +163,12 @@ def five():
 	# There are no hints for this question.
     
 def six(input):
-	return False
+	x = input.lower()
+	return x.endswith("py")
+	#if x[-2:0] == "py":
+		#return True
+	#return False
+
 
 	# <QUESTION 7>
 
@@ -154,6 +192,12 @@ def six(input):
 	# Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
+	x = [a,b,c]
+	y = x.sort()
+	inc = y[0] - y[1]
+	inc2 = y[1] - y[2]
+	if inc == inc2:
+		return True
 	return False
 
 	# <QUESTION 8>
@@ -172,8 +216,13 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(input,  a):
-	return ""
-
+	x = input[(len(input)//2)-(a//2):(len(input)//2)+((a//2)+1)]
+	if len(x) == 1:
+		y = input[(len(input)//2)]
+	else:
+		y = input.replace(x, "")
+	return y
+#try list
 	# <QUESTION 9>
 
     # Given two string inputs, if one can be made from the other return the boolean True, if not return the boolean False.
@@ -189,7 +238,18 @@ def eight(input,  a):
 	# There are no hints for this question.
 
 def nine(string1, string2):
-    return False
+	if len(string1) > len(string2):
+		l = string1
+		s = string2
+	else:
+		s = string1
+		l = string2
+	for i in s:
+		if i in l:
+			continue
+		else: 
+			return False
+	return True
 
 	# <QUESTION 10>
 
